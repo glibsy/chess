@@ -7,3 +7,4 @@ b.setStartingPosition()
 
 
 b.makeMove("e2e4")
+b.getMoves()

@@ -33,23 +33,21 @@ class Board():
     def getMoves(self):
         b = self.board
         moves = []
-        square = 0
-        for i in b:
-            if i == "p":
-                moves.extend(self.getBlackPawnMoves(square))
-            elif i == "P":
-                moves.extend(self.getWhitePawnMoves(square))
-            elif i.lower() == "r":
-                moves.extend(self.getRookMoves(square))
-            elif i.lower() == "n":
-                moves.extend(self.getKnightMoves(square))
-            elif i.lower() =="b":
-                moves.extend(self.getBishopMoves(square))
-            elif i.lower() == "q":
-                moves.extend(self.getQueenMoves(square))
-            elif i.lower() == "k":
-                moves.extend(self.getKingMoves(square))
-            square += 1
+        for i in range(len(b)):
+            if b[i] == "p":
+                moves.extend(self.getBlackPawnMoves(i))
+            elif b[i] == "P":
+                moves.extend(self.getWhitePawnMoves(i))
+            elif b[i].lower() == "r":
+                moves.extend(self.getRookMoves(i))
+            elif b[i].lower() == "n":
+                moves.extend(self.getKnightMoves(i))
+            elif b[i].lower() =="b":
+                moves.extend(self.getBishopMoves(i))
+            elif b[i].lower() == "q":
+                moves.extend(self.getQueenMoves(i))
+            elif b[i].lower() == "k":
+                moves.extend(self.getKingMoves(i))
         return moves
 
     def toSquare(self, rank, file):
